@@ -1,14 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './App.css'
 import Header from './components/Header'
+import FeedbackList from './components/FeedbackList'
+import { FeedbackData } from './data/FeedbackData'
 function App() {
-//   return (
-//     <div>Hello World</div>
-//   )
+  const [Feedback,setFeedback]=useState(FeedbackData)
+
   return (
     <>
     {/* Header Component */}
-    <Header text={'JFeedback UI'}>Haha</Header>
+    <Header text={'Feedback UI'}>Haha</Header>
+    {/* FeedbackList */}
+    <FeedbackList feedback={Feedback}/>
     {/* JSX in JS format */}
     {React.createElement('div',{ color:'blue'}, 
         React.createElement('h1',{className: 'name', color: 'pink',}, 'My App'))
