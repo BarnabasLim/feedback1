@@ -13,9 +13,12 @@ function App() {
     {/* FeedbackList */}
     <FeedbackList feedback={Feedback}/>
     {/* JSX in JS format */}
-    {React.createElement('div',{ color:'blue'}, 
-        React.createElement('h1',{className: 'name', color: 'pink',}, 'My App'))
+
+    {React.createElement('div',{ className: 'container',color:'blue'}, 
+      React.createElement('h1',{className: 'name', color: 'pink',}, 'My App'))
     }
+
+
     </>
     
   )

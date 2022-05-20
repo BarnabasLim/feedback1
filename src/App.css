@@ -110,6 +110,13 @@ Review Display
     transition: all 0.2s linear;
     
 }
+
+.rating :hover,
+.num-display{
+    background: #ff6a95;
+    color:#fff
+    
+}
 .num-display{
     position: absolute;
     top:-10px;

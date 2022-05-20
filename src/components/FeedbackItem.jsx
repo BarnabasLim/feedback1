@@ -5,11 +5,16 @@ const FeedbackItem = ({item}) => {
 
 
   return (
-    
-    <Card>
-        <div className="num-display">{item.rating}</div>
-        <div className="text-display">{item.text}</div>
-    </Card>
+    <>
+      <Card reverse={false}>
+          <div className="num-display">{item.rating}</div>
+          <div className="text-display">{item.text}</div>
+      </Card>
+      <Card reverse={true}>
+          <div className="num-display">{item.rating}</div>
+          <div className="text-display">{item.text}</div>
+      </Card>
+    </>
   )
 }
 FeedbackItem.propTypes={
