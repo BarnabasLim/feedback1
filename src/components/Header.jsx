@@ -1,12 +1,13 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
+
 function Header(props) {
   const text=props.text
-  const children=props.children
-  useEffect(()=>{
-    console.log(children)
-  },[])
+  // const children=props.children
+  // useEffect(()=>{
+  //   console.log(children)
+  // },[])
   return (
     <header>
       <div className="container">
