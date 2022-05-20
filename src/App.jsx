@@ -4,6 +4,8 @@ import Header from './components/Header'
 import FeedbackStats from './components/FeedbackStats'
 import FeedbackList from './components/FeedbackList'
 import { FeedbackData } from './data/FeedbackData'
+import FeedbackForm from './components/FeedbackForm'
+
 function App() {
   //Feedback Entity
   const [Feedback,setFeedback]=useState(FeedbackData)
@@ -18,6 +20,8 @@ function App() {
     {/* Header Component */}
     <Header text={'Feedback UI'}>Haha</Header>
     <div className="container">
+      {/* FeedbackForm */}
+      <FeedbackForm/>
       {/* FeedbackStats */}
       <FeedbackStats feedback={Feedback}/>
       {/* FeedbackList */}
