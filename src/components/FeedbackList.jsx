@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import FeedbackItem from './FeedbackItem'
 import PropTypes from 'prop-types'
-const FeedbackList = ({feedback}) => {
+const FeedbackList = ({feedback, handleDelete}) => {
   
   return (
-      <div className="container">
+      <>
           {feedback.map(
-              (item)=><FeedbackItem key={item.id} item={item}/>
+              (item)=><FeedbackItem key={item.id} item={item} handleDelete={handleDelete}/>
               )
           }
-          <FeedbackItem key={111} item={{rating: 4, text:'barb'}}/>
-      </div>
+      </>
     
   )
 }
