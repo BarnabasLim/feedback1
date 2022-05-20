@@ -1,12 +1,14 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Card from './shared/Card'
+import {FaTimes} from 'react-icons/fa'
 const FeedbackItem = ({item}) => {
 
 
   return (
     <>
       <Card reverse={false}>
+          <button className="close"><FaTimes color='red'/></button>
           <div className="num-display">{item.rating}</div>
           <div className="text-display">{item.text}</div>
       </Card>
