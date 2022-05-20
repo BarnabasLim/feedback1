@@ -90,6 +90,50 @@ Review Form
     justify-content: space-around;
     margin: 30px 0 40px;
 }
+
+.input-group{
+    display: flex;
+    flex-direction: row;
+    border: 1px #ccc solid;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+input{
+    flex-grow: 2;
+    border: none;
+    font-size: 16px;
+}
+
+input:focus{
+    /* Ensure no outline when in focus */
+    outline: none;
+}
+
+.btn {
+    color:#fff;
+    border: 0;
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-primary{
+    background-color: #202142;
+}
+.btn-secondary{
+    background-color: #ff6a95;
+}
+.btn:hover{
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+.btn:disabled{
+    background-color: #cccccc;
+    color: #333;
+    cursor: auto;
+}
 /* 
 ============
 Feedback Stats

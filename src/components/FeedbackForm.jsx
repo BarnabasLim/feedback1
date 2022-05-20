@@ -12,7 +12,7 @@ const FeedbackForm = () => {
             <h2>how would you rate your service with us?</h2>
             <div className="input-group">
                 <input onChange={handleTextChange} type="text" placeholder='Write a review' Value={text} />
-                <button className="submit">send</button>
+                <button className="btn submit">send</button>
             </div>
         </form>
     </Card>
