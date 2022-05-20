@@ -90,7 +90,20 @@ Review Form
     justify-content: space-around;
     margin: 30px 0 40px;
 }
-
+/* 
+============
+Feedback Stats
+============
+*/
+.feedback-stats{
+    color:#fff;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.feedback-stats h4{
+    padding: 0 10px;
+}
 /* 
 ============
 Review Display
