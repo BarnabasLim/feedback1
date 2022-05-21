@@ -134,6 +134,12 @@ input:focus{
     color: #333;
     cursor: auto;
 }
+
+.message{
+    padding-top: 10px;
+    text-align: center;
+    color: rebeccapurple;
+}
 /* 
 ============
 Feedback Stats

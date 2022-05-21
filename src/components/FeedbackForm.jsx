@@ -10,7 +10,6 @@ const FeedbackForm = () => {
 
   const handleTextChange=(e)=>{
       const temp=e.target.value
-      console.log(temp +'length'+temp.trim().length)
       if(temp===''){
         setMessage(null)
         setBtnDisabled(true)
