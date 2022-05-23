@@ -2,7 +2,7 @@ import React from 'react'
 
 const RatingSelect = ({rating,setRating}) => {
   const handleChange=(e)=>{
-    console.log("print"+e.currentTarget.value)
+    // console.log("print"+e.currentTarget.value)
     setRating(+e.currentTarget.value)
   }
   return (
