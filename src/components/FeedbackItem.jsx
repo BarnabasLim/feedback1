@@ -7,7 +7,7 @@ const FeedbackItem = ({item, handleDelete}) => {
 
   return (
     <>
-      <Card reverse={false}>
+      <Card reverse={false} id={item.id}>
           <button className="close" onClick={()=>handleDelete(item.id)}><FaTimes color='red'/></button>
           <div className="num-display">{item.rating}</div>
           <div className="text-display">{item.text}</div>

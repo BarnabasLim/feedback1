@@ -8,7 +8,7 @@ const FeedbackList = ({feedback, handleDelete}) => {
           {feedback.map(
               (item)=><FeedbackItem key={item.id} item={item} handleDelete={handleDelete}/>
               )
-          }
+          } 
       </>
     
   )

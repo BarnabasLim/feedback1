@@ -13,12 +13,15 @@ function App() {
   const [Feedback,setFeedback]=useState(FeedbackData)
   //Feedback Methods
   const deleteFeedback=(id)=>{
-    console.log(id)
-    setFeedback((prev)=>{return prev.filter((item)=>item.id!==id)})
+    const rmvItem = document.getElementById(id);
+    rmvItem.classList.add('disappear')
+    setTimeout(()=>{setFeedback((prev)=>{return prev.filter((item)=>item.id!==id)})}, 200)
+    // console.log(id)
+    // setFeedback((prev)=>{return prev.filter((item)=>item.id!==id)})
+
   }
 
   const addFeedback=(newFeedback)=>{
-    
     newFeedback.id=uuidV4()
     console.log(newFeedback)
     setFeedback((prev)=>{return [newFeedback,...Feedback]})
@@ -34,9 +37,9 @@ function App() {
       <FeedbackStats feedback={Feedback}/>
       {/* FeedbackList */}
       <FeedbackList feedback={Feedback} handleDelete={deleteFeedback}/>
-      {/* JSX in JS format */}
     </div>
 
+    {/* JSX in JS format */}
     {React.createElement('div',{ className: 'container',color:'blue'}, 
       React.createElement('h1',{className: 'name', color: 'pink',}, 'My App'))
     }

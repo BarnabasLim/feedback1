@@ -39,15 +39,25 @@ body{
 }
 
 .Card{
+    animation: fadeIn 1s;
     background-color: #fff;
     color: #333;
     border-radius: 15px;
     padding: 40px 50px;
     margin: 20px 0;
     position: relative;
+    opacity: 1;
     transition: all 0.2s linear;
 }
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
 
+.Card.disappear{
+    opacity: 0;
+
+}
 .Card.reverse{
     background-color: rgba(0, 0, 0, 0.4);
     color:#fff

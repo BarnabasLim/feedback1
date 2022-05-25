@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-const Card = ({children, reverse}) => {
+const Card = ({children, reverse,id}) => {
 
   return (
-    <div className={`Card ${reverse && 'reverse'}`}>
+    <div className={`Card ${reverse && 'reverse'}`} id={id!==''?id:''}>
         {children}
     </div>
   )
@@ -11,6 +11,7 @@ const Card = ({children, reverse}) => {
 
 Card.defaultProps={
     reverse: false,
+    id:'',
 }
 
 Card.propTypes={
