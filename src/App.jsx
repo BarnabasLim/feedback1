@@ -2,6 +2,9 @@ import React,{useState} from 'react'
 import { BrowserRouter as Router, Route ,Routes } from 'react-router-dom'
 import './App.css'
 import {v4 as uuidV4} from 'uuid'
+//UseContext
+import FeedbackContext from './context/FeedbackContext'
+import { FeedbackProvider } from './context/FeedbackContext'
 
 import Header from './components/Header'
 import FeedbackStats from './components/FeedbackStats'
@@ -33,33 +36,36 @@ function App() {
   }
   return (
     <>
-    {/* Header Component */}
-    <Header text={'Feedback UI'}>Haha</Header>
-    <Router>
-      <Routes>
-        <Route path='/' element={
-            <div className="container">
-              {/* FeedbackForm */}
-              <FeedbackForm handleAdd={addFeedback}/>
-              {/* FeedbackStats */}
-              <FeedbackStats feedback={Feedback}/>
-              {/* FeedbackList */}
-              <FeedbackList feedback={Feedback} handleDelete={deleteFeedback}/>
-  
-            </div>
-        }/>
+    <FeedbackProvider>
+          {/* Header Component */}
+          <Header text={'Feedback UI'}>Haha</Header>
+          <Router>
+            <Routes>
+              <Route path='/' element={
+                  <div className="container">
+                    {/* FeedbackForm */}
+                    <FeedbackForm />
+                    {/* FeedbackStats */}
+                    <FeedbackStats />
+                    {/* FeedbackList */}
+                    <FeedbackList/>
+        
+                  </div>
+              }/>
 
-        <Route path='/about' element={<AboutPage/>}/>
-      </Routes>
-      {/* Links to about */}
-      <AboutIconLink/>
-    </Router>
+              <Route path='/about' element={<AboutPage/>}/>
+            </Routes>
+            {/* Links to about */}
+            <AboutIconLink/>
+          </Router>
 
 
-    {/* JSX in JS format */}
-    {React.createElement('div',{ className: 'container',color:'blue'}, 
-      React.createElement('h1',{className: 'name', color: 'pink',}, 'My App'))
-    }
+          {/* JSX in JS format */}
+          {React.createElement('div',{ className: 'container',color:'blue'}, 
+            React.createElement('h1',{className: 'name', color: 'pink',}, 'My App'))
+          }
+    </FeedbackProvider>
+
 
 
     </>
