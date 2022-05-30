@@ -233,3 +233,24 @@ Review Display
 .edit{
     right: 40px;
 }
+
+/* 
+============
+About Link
+============
+*/
+
+.about-link{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.about-link a {
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .about-link a:hover {
+    color: #ff6a95;
+  }
