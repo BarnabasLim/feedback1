@@ -22,7 +22,7 @@ export const FeedbackProvider=({children})=>{
     const fetchFeedbacks=async()=>{
         // const response1=await fetch('https://sleepy-atoll-12273.herokuapp.com/api/feedbacks')
         // console.log(response1);
-        const response=await fetch('/api/feedbacks'
+        const response=await fetch('https://sleepy-atoll-12273.herokuapp.com/api/feedbacks'
         // ,
         // {
         //     mode: 'no-cors',
