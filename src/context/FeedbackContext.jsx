@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {v4 as uuidV4} from 'uuid'
 import {FeedbackData} from '../data/FeedbackData'
 
@@ -14,6 +14,30 @@ export const FeedbackProvider=({children})=>{
     })
 
     //Methods
+    useEffect(()=>{
+        fetchFeedbacks();
+    },[])
+
+    //Get Feedbacks
+    const fetchFeedbacks=async()=>{
+        // const response1=await fetch('https://sleepy-atoll-12273.herokuapp.com/api/feedbacks')
+        // console.log(response1);
+        const response=await fetch('/api/feedbacks'
+        // ,
+        // {
+        //     mode: 'no-cors',
+        //     method:'GET',
+        //     headers:{
+        //         "Content-Type": "application/json",
+        //         "Access-Control-Allow-Origin": "*",
+        //     },
+        // }
+        )
+        console.log(response);
+        const data=await response.json();
+        console.log(data)
+        setFeedback(data)
+    }
 
     //Delete Feedback item
     const deleteFeedback=(id)=>{
