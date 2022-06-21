@@ -45,10 +45,20 @@ export const FeedbackProvider=({children})=>{
     }
 
     //Add Feedback item
-    const addFeedback=(newFeedback)=>{
-        newFeedback.id=uuidV4()
-        console.log(newFeedback)
-        setFeedback((prev)=>{return [newFeedback,...feedback]})
+    const addFeedback=async(newFeedback)=>{
+        const response =await  fetch('https://sleepy-atoll-12273.herokuapp.com/api/feedbacks',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(newFeedback)
+        })
+        console.log(response)
+        const data=response.json();
+        console.log(data)
+        // newFeedback.id=uuidV4()
+        // console.log(newFeedback)
+        setFeedback((prev)=>{return [data,...feedback]})
     }
 
     //Set items to be updated
