@@ -58,7 +58,7 @@ export const FeedbackProvider=({children})=>{
         console.log(data)
         // newFeedback.id=uuidV4()
         // console.log(newFeedback)
-        setFeedback((prev)=>{return [data,...feedback]})
+        setFeedback((prev)=>{return [data,...prev]})
     }
 
     //Set items to be updated
