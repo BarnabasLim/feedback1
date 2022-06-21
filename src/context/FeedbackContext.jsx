@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import {v4 as uuidV4} from 'uuid'
+// import {v4 as uuidV4} from 'uuid'
 import {FeedbackData} from '../data/FeedbackData'
 
 const FeedbackContext=createContext();
@@ -49,12 +49,12 @@ export const FeedbackProvider=({children})=>{
         const response =await  fetch('https://sleepy-atoll-12273.herokuapp.com/api/feedbacks',{
             method:'POST',
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
             },
             body:JSON.stringify(newFeedback)
         })
         console.log(response)
-        const data=await response.json();
+        const data=await response.json()
         console.log(data)
         // newFeedback.id=uuidV4()
         // console.log(newFeedback)
