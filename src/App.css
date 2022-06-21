@@ -200,6 +200,10 @@ input:focus{
         display: flex;
         flex-direction: column;
     }
+    input{
+        min-height: 40px;
+        width: 100%;
+    }
     .btn {
         color:#fff;
         border: 0;

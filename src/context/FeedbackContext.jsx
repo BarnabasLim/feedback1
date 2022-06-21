@@ -23,15 +23,6 @@ export const FeedbackProvider=({children})=>{
         // const response1=await fetch('https://sleepy-atoll-12273.herokuapp.com/api/feedbacks')
         // console.log(response1);
         const response=await fetch('https://sleepy-atoll-12273.herokuapp.com/api/feedbacks'
-        // ,
-        // {
-        //     mode: 'no-cors',
-        //     method:'GET',
-        //     headers:{
-        //         "Content-Type": "application/json",
-        //         "Access-Control-Allow-Origin": "*",
-        //     },
-        // }
         )
         console.log(response);
         const data=await response.json();
@@ -40,9 +31,12 @@ export const FeedbackProvider=({children})=>{
     }
 
     //Delete Feedback item
-    const deleteFeedback=(id)=>{
+    const deleteFeedback=async(id)=>{
         const rmvItem = document.getElementById(id);
         rmvItem.classList.add('disappear')
+        await fetch('https://sleepy-atoll-12273.herokuapp.com/api/feedbacks',{
+            method:'DELETE'
+        })
         setTimeout(()=>{setFeedback((prev)=>{return prev.filter((item)=>item.id!==id)})}, 200)
         // console.log(id)
         // setFeedback((prev)=>{return prev.filter((item)=>item.id!==id)})
