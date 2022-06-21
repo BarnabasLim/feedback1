@@ -54,7 +54,7 @@ export const FeedbackProvider=({children})=>{
             body:JSON.stringify(newFeedback)
         })
         console.log(response)
-        const data=response.json();
+        const data=await response.json();
         console.log(data)
         // newFeedback.id=uuidV4()
         // console.log(newFeedback)
