@@ -34,9 +34,10 @@ export const FeedbackProvider=({children})=>{
     const deleteFeedback=async(id)=>{
         const rmvItem = document.getElementById(id);
         rmvItem.classList.add('disappear')
-        await fetch(`https://sleepy-atoll-12273.herokuapp.com/api/feedbacks/${id}`,{
+        const response=await fetch(`https://sleepy-atoll-12273.herokuapp.com/api/feedbacks/${id}`,{
             method:'DELETE'
         })
+        console.log(response)
         setTimeout(()=>{setFeedback((prev)=>{return prev.filter((item)=>item.id!==id)})}, 200)
         // console.log(id)
         // setFeedback((prev)=>{return prev.filter((item)=>item.id!==id)})
