@@ -63,6 +63,7 @@ export const FeedbackProvider=({children})=>{
 
     //Set items to be updated
     const editFeedback=(item)=>{
+        
         setFeedbackEdit({
             item,
             edit:true
@@ -70,7 +71,14 @@ export const FeedbackProvider=({children})=>{
     }
 
     //update Feedback
-    const updateFeedback=(id, updItem)=>{
+    const updateFeedback=async(id, updItem)=>{
+        const response =await fetch(`https://sleepy-atoll-12273.herokuapp.com/api/feedbacks/${id}`,{
+            method:'PATCH',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(updItem)
+        })
         setFeedback(feedback.map((item)=>(
             item.id===id?
             {...item, ...updItem}:
