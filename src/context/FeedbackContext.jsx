@@ -7,6 +7,7 @@ const FeedbackContext=createContext();
 export const FeedbackProvider=({children})=>{
     //State
     const [feedback, setFeedback]=useState([])
+    const [isLoading,setIsLoading]=useState(true)
 
     const [feedbackEdit,setFeedbackEdit]=useState({
         item:{},
@@ -22,12 +23,14 @@ export const FeedbackProvider=({children})=>{
     const fetchFeedbacks=async()=>{
         // const response1=await fetch('https://sleepy-atoll-12273.herokuapp.com/api/feedbacks')
         // console.log(response1);
+        
         const response=await fetch('https://sleepy-atoll-12273.herokuapp.com/api/feedbacks'
         )
         console.log(response);
         const data=await response.json();
         console.log(data)
         setFeedback(data)
+        setIsLoading(false)
     }
 
     //Delete Feedback item
@@ -98,6 +101,7 @@ export const FeedbackProvider=({children})=>{
         <FeedbackContext.Provider value={{
             feedback,
             feedbackEdit,
+            isLoading,
             deleteFeedback,
             addFeedback,
             editFeedback,
