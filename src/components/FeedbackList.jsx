@@ -4,9 +4,12 @@ import FeedbackContext from '../context/FeedbackContext'
 
 const FeedbackList = () => {
   const {feedback}=useContext(FeedbackContext);
-  if(true&&(!feedback && feedback.length===0)){
-      return <p>No Feedback Yet</p>
-  }
+//   if(true && (!feedback && feedback.length===0)){
+//       return <p>No Feedback Yet</p>
+//   }
+  if(feedback.length===0){
+    return <p>No Feedback Yet !!!!!!!!!!!!!!!!!!</p>
+  } 
   return (
       <>
           <p>No Feedback Yet</p>
