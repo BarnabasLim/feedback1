@@ -1,9 +1,9 @@
 import React from 'react'
-import Spinner from '../assets/spinner.gif'
+import spinner from '../assets/spinner.gif'
 const Spinner = () => {
   return (
   
-    <img src={Spinner} alt="Loading" style={{width: '100px', margin:'auto', display:'block'}}/>
+    <img src={spinner} alt="Loading" style={{width: '100px', margin:'auto', display:'block'}}/>
 
 
   )
