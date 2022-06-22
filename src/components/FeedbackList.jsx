@@ -7,13 +7,12 @@ const FeedbackList = () => {
 //   if(true && (!feedback && feedback.length===0)){
 //       return <p>No Feedback Yet</p>
 //   }
-  if(feedback.length===0){
+  if(!feedback && feedback.length===0){
       console.log(feedback.length)
     return <p>No Feedback Yet !!!!!!!!!!!!!!!!!!</p>
   } 
   return (
       <>
-          <p>No Feedback Yet</p>
           {feedback.map(
               (item)=><FeedbackItem key={item.id} item={item} />
               )
