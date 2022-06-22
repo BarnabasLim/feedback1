@@ -14,6 +14,7 @@ const FeedbackList = () => {
         <Spinner/>
       :
       <>
+        <Spinner/>
           {feedback.map(
               (item)=><FeedbackItem key={item.id} item={item} />
               )

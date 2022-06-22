@@ -73,7 +73,7 @@ body{
 }
 
 .Spinner{
-    width: auto;
+    width: 40%;
     margin: auto;
     display: block;
 }
