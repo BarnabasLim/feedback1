@@ -8,6 +8,7 @@ const FeedbackList = () => {
 //       return <p>No Feedback Yet</p>
 //   }
   if(feedback.length===0){
+      console.log(feedback.length)
     return <p>No Feedback Yet !!!!!!!!!!!!!!!!!!</p>
   } 
   return (
