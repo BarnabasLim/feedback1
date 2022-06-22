@@ -79,7 +79,9 @@ export const FeedbackProvider=({children})=>{
             },
             body:JSON.stringify(updItem)
         })
+        console.log(response)
         const data=await response.json();
+        console.log(data)
         updItem=data
         setFeedback(feedback.map((item)=>(
             item.id===id?

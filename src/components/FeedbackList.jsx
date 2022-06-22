@@ -3,12 +3,12 @@ import FeedbackItem from './FeedbackItem'
 import FeedbackContext from '../context/FeedbackContext'
 
 const FeedbackList = () => {
-  const {feedback,deleteFeedback}=useContext(FeedbackContext);
+  const {feedback}=useContext(FeedbackContext);
 
   return (
       <>
           {feedback.map(
-              (item)=><FeedbackItem key={item.id} item={item} handleDelete={deleteFeedback}/>
+              (item)=><FeedbackItem key={item.id} item={item} />
               )
           } 
       </>
