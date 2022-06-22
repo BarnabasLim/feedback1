@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import FeedbackItem from './FeedbackItem'
 import FeedbackContext from '../context/FeedbackContext'
+import Spinner from './shared/Spinner'
 
 const FeedbackList = () => {
   const {isLoading, feedback}=useContext(FeedbackContext);
@@ -10,7 +11,7 @@ const FeedbackList = () => {
   } 
   return (
       isLoading?
-        <p>Loading Screen</p>
+        <Spinner/>
       :
       <>
           {feedback.map(
